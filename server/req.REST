@@ -1,0 +1,28 @@
+
+POST http://localhost:3001/api/insert
+Content-Type: application/json
+
+{
+    "issueName": "RestClientTest5111",
+    "issueDesc": "works?"
+}
+
+###
+
+GET http://localhost:3001/api/get
+Content-Type: application/json
+
+###
+
+PUT http://localhost:3001/api/update/24
+Content-Type: application/json
+
+{
+    "issueName": "RestClientTest",
+    "issueDesc": "updated sir"
+}
+
+###
+
+DELETE http://localhost:3001/api/delete/25
+Content-Type:  application/json
