@@ -16,7 +16,9 @@ const db = mysql.createPool({
     database: DATABASE
 });
 
-app.use(cors());
+app.use(
+    cors({origin: "*",
+}));
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
  
@@ -51,7 +53,7 @@ app.get("/api/get", async (req, res)=>{
     try {
         const sqlSelect = "SELECT * FROM issues";
         db.query(sqlSelect, (err, result)=>{
-            res.status(200).json(result);
+           res.status(200).json(result);
         });
        
     } catch (err) {
@@ -70,7 +72,7 @@ app.delete("/api/delete/:id", async (req, res)=>{
     } catch (err) {
         res.json(err);
     }
-   
+
 });
 
 
